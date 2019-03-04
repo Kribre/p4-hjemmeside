@@ -297,21 +297,23 @@ main {
   grid-area: grid-6;
 }
 
-.grid-textbox {
-  max-width: 300px;
+.grid-textbox-right {
+  max-width: 80%;
+  padding-left: 30px;
+
 }
 
 .h2-grid {
   font-family: 'Amatic SC', cursive;
   font-size: 40px;
-  padding-top: 50px;
+  padding-top: 0px;
 }
 
 .h3-grid {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 16px;
-  padding-top: 5px;
+  padding-top: 15px;
 }
 
 .h3-grid-italic {
@@ -357,4 +359,16 @@ main {
 
 .grid-container>div {
   margin: 0 0 0 20px;
+}
+
+.fullwidth-img-box {
+  width: 100%;
+  padding-bottom: 45%;
+  margin: 50px 0 100px 0;
+  font-family: 'Raleway';
+background-color: blue;
+background-image: url("image/fullwidth-img.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: top left;
 }
