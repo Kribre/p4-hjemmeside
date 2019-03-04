@@ -134,16 +134,24 @@ main {
   text-align: center;
 }
 
-.shop-h2 {
+.h2 {
   font-family: 'Amatic SC', cursive;
-  font-size: 2em;
+  font-size: 40px;
   padding-top: 50px;
 }
 
-.shop-h3 {
+.h3 {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 16px;
+  padding-top: 5px;
+}
+
+.h3-italic {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
   padding-top: 5px;
 }
 
@@ -249,10 +257,13 @@ main {
   z-index: -1;
 }
 
-.line {
+.line1 {
   grid-area: line-1;
 }
 
+.line2 {
+  grid-area: line-2;
+}
 .grid-1 {
   grid-area: grid-1;
 }
@@ -287,6 +298,7 @@ main {
 
 .grid-container {
   margin-right: auto;
+  background-color: rgba(255, 255, 0, .1);
   margin-left: auto;
   width: 83.33%;
   display: grid;
@@ -296,19 +308,28 @@ main {
     'grid-1 grid-2'
     'line-1 line-1'
     'grid-3 grid-4'
+    'line-2 line-2'
     'grid-5 grid-6';
 }
 
-.line {
+.line-1 {
   grid-column-start: 1;
   grid-column-end: 3;
   height: 2px;
   border-bottom: 1px solid black;
   width: 100%;
 }
-.grid-container>div {
+.line-2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 2px;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.grid-container {
   background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
+  text-align: left;
   padding: 20px 0;
   font-size: 30px;
 }
