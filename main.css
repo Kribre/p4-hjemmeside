@@ -126,11 +126,12 @@ main {
   padding: 5.5px 7.5px 5.5px;
 }
 
+
+
 .shop-kategorier {
   width: 83.33%;
   height: 100px;
   margin: -20px 8.33% 0;
-  position: absolute;
   text-align: center;
 }
 
@@ -257,6 +258,34 @@ main {
   z-index: -1;
 }
 
+
+.grid-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 50px;
+  width: 83.33%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas:
+  'line-0 line-0'
+    'grid-1 grid-2'
+    'line-1 line-1'
+    'grid-3 grid-4'
+    'line-2 line-2'
+    'grid-5 grid-6';
+}
+
+
+.grid-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  clear: both;
+}
+
+.line0 {
+  grid-area: line-1;
+}
+
 .line1 {
   grid-area: line-1;
 }
@@ -296,20 +325,54 @@ main {
 
 }
 
-.grid-container {
-  margin-right: auto;
-  background-color: rgba(255, 255, 0, .1);
-  margin-left: auto;
-  width: 83.33%;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  margin-top: 300px;
-  grid-template-areas:
-    'grid-1 grid-2'
-    'line-1 line-1'
-    'grid-3 grid-4'
-    'line-2 line-2'
-    'grid-5 grid-6';
+.line0 {
+  grid-area: line-0;
+}
+
+.line1 {
+  grid-area: line-1;
+}
+
+.line2 {
+  grid-area: line-2;
+}
+.grid-1 {
+  grid-area: grid-1;
+}
+
+.grid-2 {
+  grid-area: grid-2;
+}
+
+.grid-3 {
+  grid-area: grid-3;
+}
+
+.grid-4 {
+  grid-area: grid-4;
+}
+
+.grid-5 {
+  grid-area: grid-5;
+}
+
+.grid-6 {
+  grid-area: grid-6;
+}
+
+.grid-img {
+  overflow: hidden;
+  object-fit: contain;
+  width: 100%;
+  background-color: red;
+
+}
+.line-0 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 2px;
+  border-bottom: 1px solid black;
+  width: 100%;
 }
 
 .line-1 {
@@ -327,9 +390,8 @@ main {
   width: 100%;
 }
 
-.grid-container {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: left;
-  padding: 20px 0;
-  font-size: 30px;
+
+.grid-container > div {
+  margin: 0 0 0 20px;
+
 }
