@@ -53,7 +53,7 @@ main {
   margin-top: 55pt;
   height: 65vh;
   overflow: hidden;
-  background-color: rgba(55, 55, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #main-img-box {
@@ -66,10 +66,60 @@ main {
   }
 
 #main-textbox {
-  background-color: red;
   width: 33.33%;
-  height: 10px;
-  display: inline-block;
+  height: 100%;
   float: right;
-  z-index: 999;
+  top: 10px;
+  margin: 30px 30px 40px 0;
+}
+
+.main-h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+  color: white;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.main-h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: white;
+  font-size: 1em;
+  margin-bottom: 15px;
+  letter-spacing: 0,7px;
+
+
+}
+
+.main-h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: white;
+  font-size: 1em;
+}
+
+.square_btn {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 0.8em;
+    position: relative;
+    display: inline-block;
+    padding: 2em 0em;
+    text-decoration: none;
+    color: #FFF;
+    transition: .4s;
+
+}
+
+.square_btn>span{
+    border-bottom: solid 1px #FFF;
+    border-top: solid  1px #FFF;
+    padding: 5px 0 5px;
+}
+
+ .square_btn:hover span {
+   padding: 6px 0 6px;
 }
