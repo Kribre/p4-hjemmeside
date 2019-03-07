@@ -30,7 +30,6 @@ li a {
 li a:hover {
   font-size: 1.03em;
   padding: 19px 15px;
-
 }
 
 .active {
@@ -62,16 +61,12 @@ li a:hover {
   z-index: -1;
 }
 
-
-
 main {
-
   top: 100px;
   margin-top: 55pt;
   height: 73vh;
   width: 100%;
   min-height: 100%;
-
 }
 
 #main-img-box {
@@ -127,6 +122,23 @@ main {
   text-decoration: none;
   color: #FFF;
   transition: .4s;
+}
+
+#background-logo-container {
+  max-width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
+
+#background-logo {
+  opacity: 0.02;
+  background-image: url(image/background-logo-element.svg);
+  top: 90vh;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 180vh;
+  z-index: -1;
 }
 
 .square_btn>span {
@@ -202,7 +214,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 0, 1);
+  background-color: #97735F;
   background-image: url(image/shop-vanilje.jpg);
   border: white;
   border-width: 2px;
@@ -222,7 +234,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 0, 1);
+  background-color: #97735F;
   background-image: url(image/shop-kaffe.jpg);
   border: white;
   border-width: 2px;
@@ -243,29 +255,14 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 0, 1);
+  background-color: #97735F;
   background-image: url(image/shop-sheabutter.jpg);
   border: white;
   border-width: 2px;
   border-style: solid;
 }
 
-#background-logo-container {
-  max-width: 100%;
-  overflow: hidden;
-  text-align: left;
-}
 
-#background-logo {
-  opacity: 0.02;
-  background-image: url(image/background-logo-element.svg);
-  top: 90vh;
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 100%;
-  height: 180vh;
-  z-index: -1;
-}
 
 .grid-container {
   margin-right: auto;
@@ -420,19 +417,18 @@ footer {
   width: 100%;
   height: 350px;
   background-size: cover;
-
 }
 
 .footer-grid {
   display: grid;
   grid-template-areas:
-  'footer-c1 footer-c2 footer-c3';
+    'footer-c1 footer-c2 footer-c3';
   grid-gap: 3px;
   padding: 10px;
   padding-bottom: -200px;
 }
 
-.footer-grid > div {
+.footer-grid>div {
   text-align: left;
   padding-top: 50px;
   padding 10px;
@@ -441,15 +437,15 @@ footer {
   color: white;
   font-size: 0.8em;
   line-height: 2em;
-
 }
+
 #footer-headline {
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
   padding-top: 0px;
   line-height: 1.5em;
-
 }
+
 #logo-footer {
   height: 55px;
   margin: -10pt 20pt 0 70pt;
@@ -459,7 +455,26 @@ footer {
 footer a:link {
   color: white;
 }
+
 /* visited link */
 footer a:visited {
   color: lightgray;
+}
+
+.mobileview {
+  display: none;
+}
+/*********************** M E D I A *******************************/
+/*********************** M E D I A *******************************/
+/*********************** M E D I A *******************************/
+@media only screen and (max-width: 600px) {
+  main, nav, .background-img-wood {
+    display: none;
+  }
+
+  .mobileview {
+    background-image: url(image/mobileview.jpg);
+    background-size: cover;
+
+  }
 }
