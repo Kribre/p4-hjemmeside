@@ -202,7 +202,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 0, 1);
+  background-color: #E6C195;
   background-image: url(image/shop-vanilje.jpg);
   border: white;
   border-width: 2px;
@@ -222,7 +222,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 0, 1);
+  background-color: #E6C195;
   background-image: url(image/shop-kaffe.jpg);
   border: white;
   border-width: 2px;
@@ -243,7 +243,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(255, 255, 0, 1);
+  background-color: #E6C195;
   background-image: url(image/shop-sheabutter.jpg);
   border: white;
   border-width: 2px;
@@ -465,6 +465,7 @@ footer a:visited {
 }
 
 
+
 /*********************** M E D I A *******************************/
 /*********************** M E D I A *******************************/
 /*********************** M E D I A *******************************/
@@ -476,11 +477,7 @@ main, nav, .background-img-wood {
 }
 
 .mobileview {
-  background-color: rgba(255, 255, 0, 0.1);
-  background-image: url(image/mobileview.jpg);
-width: 100%;
-background-size: cover;
-height: 1000px;
+
 }
 
 }

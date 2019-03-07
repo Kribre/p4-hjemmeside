@@ -1,0 +1,92 @@
+ErrorDocument 404 /p4-404.html
+
+# redirect non-www urls to www
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^p4.dk [NC]
+RewriteRule ^(.*)$ http://www.p4.dk/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9} /index.html
+RewriteRule ^index.html$ http://www.p4.dk/ [R=301,L]
+Du kan øge sikkerheden på dit website ved at tilføje en kode der gør din .htaccess fil lukket for læsning af andre end søgemaskiner og browsere.
+
+Indsæt:
+order allow,deny
+deny from all
+
+På samme vis kan du lukke af for dine kategorier, så der ikke kan snages, via en browser:
+
+Options All -Indexes
+
+Har du mange urls med mindre kønne navne, kan du ændre dem med rewrite regler.
+
+Eksempel:
+
+http://nyecykler.dk/index.php?product=productname&price=30
+
+Ønskes lidt pænere og ændret til
+
+http://nyecykler.dk/products/productname/30/
+
+Det kan du gøre i et snuptag med følgende kodestykke:
+
+[box style=”1 or 2″]RewriteEngine On
+RewriteRule ^products/([a-zA-Z]+)/([0-9]+)/$ index.php?product=$1&price=$2[/box]
+
+Begræns adgang med IP
+
+Tillad kun forud definerede IP adresser adgang til specifikke mapper, kan f.eks bruges til at ligge nydesignede versioner online til præsentation overfor kunder.
+
+order deny, allow
+deny from all
+allow from xx.xx.xx.xx
+
+Slå Gzip til, så billedfiler kan komprimeres under load
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/javascript text/css application/x-javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4.0[678] no-gzip
+BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+
+Undgå andre hotlinker til dine billeder
+
+RewriteEngine on
+OnRewriteCond %{HTTP_REFERER} !^http://www.yoursite.com [NC]
+RewriteCond %{HTTP_REFERER} !^http://yoursite.com [NC]
+RewriteRule [^/]+.(gif|jpg)$ – [F]
+
+koden sørger for, at billeder ikke vises korrekt, hvis de hotlinkes fra andre sites.
+
+Hjælp søgemaskinerne over til dit .xml sitemap
+
+Har du et dynamisk opdateret sitemap f.eks i WordPress, kan du vise alle søgemaskiner der kiger forbi, hvor det ligger.
+
+< IfModule mod_alias.c >
+RedirectMatch 301 /sitemap.xml$ http://nyecykler.dk/sitemap.xml
+RedirectMatch 301 /sitemap.xml.gz$ http://nyecykler.dk/sitemap.xml.gz
+< /IfModule >
+
+Gør dit site hurtigere ved at ændre cache tiden
+
+Har du et site, hvor du f.eks ikke skifter billederne med samme navne ud, eller meget sjældent ænder i teksterne på de gamle sider, ja så kan du udnytte brugerens egen browsercache og slippe for at de i øvrigt skal vente længe på load af tunge billeder.
+(Mod_Expires modulet skal ligge på serveren)
+
+Indstil koderne så de passer til netop dit site
+
+### EXPIRES CACHING ###
+02.
+03.ExpiresActive On
+04.
+05.ExpiresByType image/jpg “access 1 year”
+06.ExpiresByType image/jpeg “access 1 year”
+07.ExpiresByType image/gif “access 1 year”
+08.ExpiresByType image/png “access 1 year”
+09.ExpiresByType text/css “access 1 month”
+10.ExpiresByType application/pdf “access 1 month”
+11.ExpiresByType application/javascript “access 1 month”
+12.ExpiresByType application/x-javascript “access 1 month”
+13.ExpiresByType text/x-javascript “access 1 month”
+14.ExpiresByType application/x-shockwave-flash “access 1 month”
+15.ExpiresByType image/x-icon “access 1 year”
+16.ExpiresDefault “access 2 days”
+17.
+18.### EO EXPIRES CACHING ###
